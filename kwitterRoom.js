@@ -1,13 +1,13 @@
 
 //ADICIONE SEUS LINKS FIREBASE
 const firebaseConfig = {
-  apiKey: "AIzaSyDPB1VJ3s9JP4Ahk-A9aWNXZrVIyJtSjsk",
-  authDomain: "chat-7db83.firebaseapp.com",
-  databaseURL: "https://chat-7db83-default-rtdb.europe-west1.firebasedatabase.app",
-  projectId: "chat-7db83",
-  storageBucket: "chat-7db83.appspot.com",
-  messagingSenderId: "166395420044",
-  appId: "1:166395420044:web:091e7356c1c506db9a4aa9"
+  apiKey: "AIzaSyDohl1s35drFodA9y6JiO8fEVmn6a7bxHI",
+  authDomain: "chat3-b760f.firebaseapp.com",
+  databaseURL: "https://chat3-b760f-default-rtdb.firebaseio.com",
+  projectId: "chat3-b760f",
+  storageBucket: "chat3-b760f.appspot.com",
+  messagingSenderId: "926184332475",
+  appId: "1:926184332475:web:e40a95e82b7ac39ad01d9e"
 };
 
 // Initialize Firebase
