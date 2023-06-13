@@ -30,17 +30,37 @@ function enviar(){
 
 function getData() {  firebase.database().ref("/"+roomName).on('value', function(snapshot) { document.getElementById("output").innerHTML = ""; snapshot.forEach(function(childSnapshot) { childKey  = childSnapshot.key;
   childdata  = childSnapshot.val();
+  if(childKey!="purpose"){
+    idfirebase=childKey;
+    var dado=childdata;
 
-       
-      
-    });
+    var nomeuser=dado["name"];
+    var messangemuser=dado["message"];
+    var likeuser=dado["like"];
+   nometag="<h4>"+nomeuser+"<img class='user_tick' src='tick.png' ></h4>";
+  mensagemtag="<h4 class='message_h4'>"+messangemuser+"</h4>";
+  tagbutton="<button id='"+idfirebase+"' value='"+likeuser+"' onclick='atualizalike(this.id)'";
+  spantag="<span>like:"+like+" </span> </button> <hr>" ;
+  var linha=nometag+mensagemtag+tagbutton+spantag;
+  document.getElementById("output").innerHTML+=linha;
+}
+});
   });
 
 }
 
 getData();
 
+function atualizalike(menssagenid){
+  var idbutton=menssagenid;
+   var likes=document.getElementById(idbutton).value;
+   var soumalika=Number(likes)+1;
+   firebase.database().ref(roomName).child(menssagenid).update({
+    like:soumalika
+   });
 
+  
+}
 
 function logout() {
 localStorage.removeItem("userName");
